@@ -1,8 +1,15 @@
+import { Fragment } from "react";
+import Hearders from "./components/Layout/Header";
+import Meals from "./components/Meals/Meal";
+
 function App() {
   return (
-    <div>
-      <h2>Let's get startewerwerwed!</h2>
-    </div>
+    <Fragment>
+      <Hearders></Hearders>
+      <main>
+        <Meals/>
+      </main>
+    </Fragment>
   );
 }
 
