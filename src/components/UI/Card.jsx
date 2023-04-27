@@ -4,7 +4,7 @@ import cx from "classnames";
 
 const Card = (props) => {
   const classes = cx(styles.card, props.className);
-  return <Fragment className={classes}>{props.children}</Fragment>;
+  return <div className={classes}>{props.children}</div>;
 };
 
 export default Card;
