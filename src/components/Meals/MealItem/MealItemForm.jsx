@@ -19,12 +19,16 @@ const MealItemForm = (props) => {
     setAdded(true);
   };
 
+  const modalOff = () => {
+    setAdded(false);
+  }
+
   return ( <Fragment>
     {added && (
       <Modal
       title='Ordering ...'
-      message='incommig...'>
-
+      message='incommig...'
+      onConfirm={modalOff}>
       </Modal>
     )}
     <form className={styles.form} onSubmit={submitHandler}>
