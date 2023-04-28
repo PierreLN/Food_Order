@@ -2,6 +2,7 @@
 
 * {
   box-sizing: border-box;
+  
 }
 
 html {
@@ -10,6 +11,17 @@ html {
 
 body {
   margin: 0;
-  background-color: #3f3f3f;
+  background-color: #000000;
+
+}
+
+.main-background {
+  width: 100%;
+  height: 1300px;
+  background-image: url('./images/background.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: bottom;
+
 }
 

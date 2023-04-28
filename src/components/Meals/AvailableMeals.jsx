@@ -6,26 +6,26 @@ const DUMMY_MEALS = [
   {
     id: "m1",
     name: "Sushi",
-    description: "Finest fish and veggies",
-    price: 22.99,
+    description: "Salmon and avocado",
+    price: 55.00,
   },
   {
     id: "m2",
-    name: "Schnitzel",
-    description: "A german specialty!",
-    price: 16.5,
+    name: "Pizza",
+    description: "Italian specialty!",
+    price: 16.49,
   },
   {
     id: "m3",
-    name: "Barbecue Burger",
-    description: "American, raw, meaty",
-    price: 12.99,
+    name: "5 guy's Burger",
+    description: "faaty meaty with fries",
+    price: 21.99,
   },
   {
     id: "m4",
-    name: "Green Bowl",
-    description: "Healthy...and green...",
-    price: 18.99,
+    name: "Poka Bowl",
+    description: "Healthy green stuffs",
+    price: 77.77,
   },
 ];
 

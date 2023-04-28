@@ -6,9 +6,11 @@ function App() {
   return (
     <Fragment>
       <Hearders></Hearders>
-      <main>
-        <Meals/>
-      </main>
+      <div className="main-background">
+        <main>
+          <Meals />
+        </main>
+      </div>
     </Fragment>
   );
 }
