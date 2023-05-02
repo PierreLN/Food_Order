@@ -2,6 +2,7 @@ import { Fragment, useState } from "react";
 import styles from "./HeaderCartButton.module.css";
 import CartIcon from "../Cart/CartIcon";
 import Modal from "../UI/Modal";
+import Cart from "../Cart/Cart";
 
 const HeaderCartButton = (props) => {
   const [added, setAdded] = useState(false);
@@ -16,11 +17,9 @@ const HeaderCartButton = (props) => {
   return (
     <Fragment>
       {added && (
-        <Modal
-          title="Ordering ..."
-          message="incomming..."
+        <Cart
           onConfirm={modalOff}
-        ></Modal>
+        ></Cart>
       )}
       <button className={styles.button} onClick={orderingHandler}>
         <span className={styles.icon}>

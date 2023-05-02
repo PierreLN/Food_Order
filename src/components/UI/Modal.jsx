@@ -8,31 +8,27 @@ const Backdrop = (props) => {
 };
 
 const ModalOverlay = (props) => {
-  return <Card className={styles.modal}>
-      <header>
-          <h2>{props.title}</h2>
-      </header>
-      <div>
-          <p>{props.message}</p>
-      </div>
-      <footer>
-          <button onClick={props.onConfirm}>Okay</button>
-      </footer>
-  </Card>
-}
+  return (
+    <Card className={styles.modal}>
+      <div>{props.children}</div>
+    </Card>
+  );
+};
 const Modal = (props) => {
-  return <Fragment>{ReactDOM.createPortal(
-  <Backdrop onConfirm={props.onConfirm}
-  ></Backdrop>, document.getElementById('backdrop-root')
-  )}
-  {ReactDOM.createPortal(
-    <ModalOverlay
-    title={props.title}
-    message={props.message}
-    onConfirm={props.onConfirm}
-    ></ModalOverlay>, document.getElementById('overlay-root')
-  )}
-  </Fragment>;
+  return (
+    <Fragment>
+      {ReactDOM.createPortal(
+        <Backdrop onConfirm={props.onConfirm}></Backdrop>,
+        document.getElementById("backdrop-root")
+      )}
+      {ReactDOM.createPortal(
+        <ModalOverlay
+          
+        >{props.children}</ModalOverlay>,
+        document.getElementById("overlay-root")
+      )}
+    </Fragment>
+  );
 };
 
 export default Modal;
