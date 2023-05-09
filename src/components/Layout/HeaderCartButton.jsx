@@ -6,6 +6,7 @@ import Cart from "../Cart/Cart";
 
 const HeaderCartButton = (props) => {
   const [added, setAdded] = useState(false);
+  const [products, setProduct] = useState(0)
 
   const orderingHandler = (props) => {
     setAdded(true);
@@ -26,7 +27,7 @@ const HeaderCartButton = (props) => {
           <CartIcon />
         </span>
         <span>Your Cart</span>
-        <span className={styles.badge}>3</span>
+        <span className={styles.badge}>{products}</span>
       </button>
     </Fragment>
   );
