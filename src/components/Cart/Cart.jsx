@@ -1,28 +1,26 @@
 import React from "react";
 import styles from "./Cart.module.css";
 import Modal from "../UI/Modal";
-import Meals from "../Meals/Meals";
 
 const Cart = (props) => {
-  // const orderHandler = (event) => {
-  //   console.log(event);
-  // };
+  const orderHandler = (event) => {
+    console.log(props.addOrderedItem);
+  };
 
-  // const cartList = <Meals orderList={orderHandler}></Meals>;
-
-  //   <ul className={styles["cart-items"]}>
-  //   {orderList.map((item) => (
-  //     <div className={styles.items}>
-  //       <div>{item.name}</div>
-  //       <div>{`${item.price}$`}</div>
-  //     </div>
-  //   ))}
-  // </ul>
+  const cartList = <ul className={styles["cart-items"]}>
+    {(props.addOrderedItem).map((item) => (
+      <div className={styles.items}>
+        <div>{item[0].name}</div>
+        <div>{`${item[0].price}$`}</div>
+      </div>
+    ))}
+  </ul>
 
   return (
     <Modal onConfirm={props.onConfirm}>
+      {cartList}
       <div className={styles.total}>
-        <div>Total Amount</div>
+        <div onClick={orderHandler}>Total Amount</div>
         <div>{`${"32"} $`}</div>
       </div>
       <div className={styles.actions}>

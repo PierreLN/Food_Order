@@ -1,20 +1,20 @@
-import { Fragment } from "react";
+import { useState, Fragment } from "react";
 import Hearders from "./components/Layout/Header";
 import Meals from "./components/Meals/Meals";
-import Cart from "./components/Cart/Cart";
 
-function App() {
+function App(props) {
+  const [addOrderedItem, setAddOrderedItem] = useState([]);
 
-  const orderedItems = (event) => {
-    console.log(event);
-  }
+  const orderList = (items) => {
+    setAddOrderedItem(items);
+  };
 
   return (
     <Fragment>
-      <Hearders></Hearders>
+      <Hearders addOrderedItem={addOrderedItem}></Hearders>
       <div className="main-background">
         <main>
-          <Meals orderedItems={orderedItems}/>
+          <Meals orderList={orderList} />
         </main>
       </div>
     </Fragment>

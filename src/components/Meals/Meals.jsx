@@ -9,7 +9,7 @@ const Meals = (props) => {
     setMealOrderList((previousData) => {
       return [newData, ...previousData];
     });
-    // props.orderList(mealOrderList);
+    props.orderList(mealOrderList);
   };
 
   return (

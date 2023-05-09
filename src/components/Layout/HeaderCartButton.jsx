@@ -20,6 +20,7 @@ const HeaderCartButton = (props) => {
       {added && (
         <Cart
           onConfirm={modalOff}
+          addOrderedItem={props.addOrderedItem}
         ></Cart>
       )}
       <button className={styles.button} onClick={orderingHandler}>
