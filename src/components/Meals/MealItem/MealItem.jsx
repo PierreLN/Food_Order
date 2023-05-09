@@ -1,15 +1,13 @@
 import styles from "./MealItem.module.css";
 import Card from "../../UI/Card";
 import MealItemForm from "./MealItemForm";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 const MealItem = (props) => {
   const pricing = `$${props.price}`;
 
-  const [amount, setAmount] = useState(1);
 
   const onAmoundChange = (data) => {
-    setAmount(+data);
     const productAdded = [
       { id: props.id, name: props.name, price: props.price, amount: +data},
     ];

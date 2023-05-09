@@ -3,18 +3,13 @@ import styles from "./MealItemForm.module.css";
 import Input from "../../UI/Input.jsx";
 
 const MealItemForm = (props) => {
-  const [amount, setAmount] = useState(1);
 
   const itemRef = useRef(null);
-
-  const enteredData = (event) => {
-    setAmount(event.target.value);
-  };
 
   const submitHandler = (event) => {
     event.preventDefault();
     props.onAmoundChange(itemRef.current.value);
-    setAmount(1);
+    itemRef.current.value = 1;
   };
 
   return (
@@ -28,8 +23,7 @@ const MealItemForm = (props) => {
             min: "1",
             max: "5",
             step: "1",
-            value: amount,
-            onChange: enteredData,
+            defaultValue: '1',
             ref: itemRef,
           }}
         ></Input>

@@ -1,4 +1,4 @@
-import { useState, Fragment } from "react";
+import { useState, Fragment, useEffect } from "react";
 import AvailableMeals from "./AvailableMeals";
 // import MealsSummary from "./MealsSummery";
 
@@ -7,10 +7,14 @@ const Meals = (props) => {
 
   const listHandler = (newData) => {
     setMealOrderList((previousData) => {
-      return [newData, ...previousData];
+      const updatedDate = [newData, ...previousData]
+      return updatedDate;
     });
-    props.orderList(mealOrderList);
   };
+
+  useEffect(() => {
+    props.orderList(mealOrderList)
+  }, [mealOrderList, props])
 
   return (
     <Fragment>
