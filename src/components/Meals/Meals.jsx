@@ -1,6 +1,6 @@
 import { useState, Fragment, useEffect } from "react";
 import AvailableMeals from "./AvailableMeals";
-// import MealsSummary from "./MealsSummery";
+import MealsSummary from "./MealsSummary";
 
 const Meals = (props) => {
   const [mealOrderList, setMealOrderList] = useState([]);
@@ -18,8 +18,8 @@ const Meals = (props) => {
 
   return (
     <Fragment>
+      <MealsSummary></MealsSummary>
       <AvailableMeals onOrder={listHandler}></AvailableMeals>
-      {/* <MealsSummary></MealsSummary> */}
     </Fragment>
   );
 };

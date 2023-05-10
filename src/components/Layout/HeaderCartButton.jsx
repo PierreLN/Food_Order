@@ -6,8 +6,7 @@ import Cart from "../Cart/Cart";
 
 const HeaderCartButton = (props) => {
   const [added, setAdded] = useState(false);
-  const [quantity, setQuantity] = useState(props.addOrderedItem.length)
-
+  const [quantity, setQuantity] = useState(props.addOrderedItem.length);
 
   const orderingHandler = (props) => {
     setAdded(true);
@@ -18,8 +17,15 @@ const HeaderCartButton = (props) => {
   };
 
   useEffect(() => {
-    setQuantity(props.addOrderedItem.length)
-  }, [props.addOrderedItem.length])
+    const numberItem = () => {
+      let totalItems = 0;
+      props.addOrderedItem.forEach((element) => {
+        totalItems += element[0].amount;
+      });
+      return totalItems;
+    };
+    setQuantity(numberItem);
+  }, [props.addOrderedItem]);
 
   return (
     <Fragment>

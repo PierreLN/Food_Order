@@ -23,7 +23,7 @@ const DUMMY_MEALS = [
   },
   {
     id: "m4",
-    name: "Poka Bowl",
+    name: "Poke Bowl",
     description: "Healthy green stuffs",
     price: 77.77,
   },
